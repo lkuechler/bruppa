@@ -1,0 +1,1 @@
+if (navigator.userAgent.match(/MSIE (\d+\.\d+);/) && 9 >= RegExp.$1){RegExp("\b" + "browserUpdate" + "\b").test(window.location.href) || (window.location.href = "browserUpdate")}

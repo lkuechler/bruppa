@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de-DE" lang="de-DE">
+<head>
+	<meta charset="UTF-8" />
+	<title>bruppa</title>
+	<link rel="stylesheet" href="../extensions/css/filter.css">
+	<meta name="language" content="de-DE" />
+	<meta name="browserUpdate" content="/playground/bruppa/prototype/bruppa.html">
+</head>
+
+<body>
+	<div class="config">
+		<div class="filterManager">
+			<select name="browser" class="browser">
+				<option value="ie">Internet Explorer</option>
+				<option value="ch">Chrome</option>
+				<option value="chM">Chrome Mobile</option>
+				<option value="ff">Firefox</option>
+				<option value="sf">Safari</option>
+				<option value="sfM">Safari Mobile</option>
+				<option value="op">Opera</option>
+			</select>
+			<input value="add" class="addFilter" type="button">
+		</div>
+	</div>
+	<textarea class="output" cols="80" rows="10"></textarea>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript" src="../extensions/js/filter.js"></script>
+	<script type="text/javascript" src="../extensions/js/uaOutput.js"></script>
+</body>
+</html>
