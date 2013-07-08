@@ -1,13 +1,69 @@
 .config, .output{
 	display: inline-block;
 	vertical-align: top;
-	.filter, .filterManager{
+	.filterManager{
+		width: 200px;
+		height: 33px;
+	}
+	.filter{
 		width: 200px;
 		height: 50px;
 		text-align: center;
 		vertical-align: middle;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 5px;
+
+		-webkit-transition: all .35s linear;
+		opacity: 0;
+		&.animate{
+			opacity: 1;
+		}
 		p{
 			margin: 0 0 5px 0;
+			color: #fff;
+		}
+		&:before{
+			position: absolute;
+			top: -15px;
+			left: -10px;
+			color: #fff;
+			font-size: 50px;
+			font-family: 'agents';
+			font-style: normal;
+			speak: none;
+			font-weight: normal;
+			-webkit-font-smoothing: antialiased;
+		}
+		&.ie{
+			background: #1a4cbd;
+			&:before{
+				content: "\e001";
+			}
+		}
+		&.ff{
+			background: #dc6f26;
+			&:before{
+				content: "\e000";
+			}
+		}
+		&.ch, &.chM{
+			background: #40ace8;
+			&:before{
+				content: "\e004";
+			}
+		}
+		&.sf, &.sfM{
+			background: #869abb;
+			&:before{
+				content: "\e003";
+			}
+		}
+		&.op{
+			background: #f0232a;
+			&:before{
+				content: "\e002";
+			}
 		}
 	}
 }

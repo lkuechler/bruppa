@@ -4,6 +4,7 @@
 	<meta charset="UTF-8" />
 	<title>bruppa</title>
 	<link rel="stylesheet" href="../extensions/css/filter.css">
+	<link rel="stylesheet" href="../extensions/css/caniuse.css">
 	<meta name="language" content="de-DE" />
 	<meta name="browserUpdate" content="/playground/bruppa/prototype/bruppa.html">
 </head>
@@ -11,7 +12,7 @@
 <body>
 	<div class="config">
 		<div class="filterManager">
-			<select name="browser" class="browser">
+			<select name="browser" id="browser">
 				<option value="ie">Internet Explorer</option>
 				<option value="ch">Chrome</option>
 				<option value="chM">Chrome Mobile</option>
@@ -20,12 +21,19 @@
 				<option value="sfM">Safari Mobile</option>
 				<option value="op">Opera</option>
 			</select>
-			<input value="add" class="addFilter" type="button">
+			<input value="add" id="addFilter" type="button">
 		</div>
+		<div id="js_filter"></div>
 	</div>
-	<textarea class="output" cols="80" rows="10"></textarea>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<textarea id="output" cols="80" rows="10"></textarea>
+	<!-- <div class="ciuWidget">
+		<input id="ciu_att" type="text" class="text"><input type="button" id="ciu" value="Go!" class="button">
+		<div class="caniuse" data-feature="querySelector" id="ciuDisplay"></div>
+	</div> -->
+	
 	<script type="text/javascript" src="../extensions/js/filter.js"></script>
 	<script type="text/javascript" src="../extensions/js/uaOutput.js"></script>
+	<!-- <script type="text/javascript" src="../extensions/js/ciuWidget.js"></script> -->
+	<!-- <script type="text/javascript" src="../extensions/js/caniuse.min.js"></script> -->
 </body>
 </html>
