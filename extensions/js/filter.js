@@ -48,7 +48,10 @@ document.getElementById('addFilter').addEventListener('click',
 			uaOutput();
 			filter.getElementsByClassName('version')[0].addEventListener('change',function(){uaOutput()}, false);
 			removeFilter();
-			document.getElementsByClassName(selected).className += ' animate';
+			window.setTimeout(show, 0);
+			function show () {
+				document.getElementsByClassName(selected)[0].className += ' animate';
+			};
 		} 
 		else{alert('You already have a filter for ' + selectName)};
 	}
@@ -59,7 +62,12 @@ function removeFilter () {
 	var removeFilterButton = document.getElementsByClassName('removeFilter');
 	for (var i = 0; i<removeFilterButton.length; i++) {
 		removeFilterButton[i].addEventListener('click', function() {
-				this.parentNode.remove();
+				var parent = this.parentNode;
+				parent.classList.remove('animate');
+				window.setTimeout(remove, 300);
+				function remove () {
+					parent.remove();
+				}
 				uaOutput();
 			}
 		);
