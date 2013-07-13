@@ -5,7 +5,10 @@ function uaOutput(){
 	for (var i = 0; i<version.length; i++) {
 		updateOutput(version[i]);
 	}
-	document.getElementById('output').value = ('if (' + output + '){var e = document.getElementsByName("browserUpdate")[0].content;RegExp("\\b" + e + "\\b").test(window.location.href) || (window.location.href = e)}');
+	exOutput = ('if (' + output + '){var e = document.getElementsByName("browserUpdate")[0].content;RegExp("\\b" + e + "\\b").test(window.location.href) || (window.location.href = e)}');
+	Rainbow.color(exOutput, 'javascript', function(highlighted_code) {
+		document.getElementById('output').innerHTML = highlighted_code;
+	});
 }
 
 function updateOutput(i) {

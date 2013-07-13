@@ -1,71 +1,87 @@
-.config, .output{
+@font-face {
+	font-family: 'agents';
+	src: url('../fonts/agents.eot');
+	src: url('../fonts/agents.eot?#iefix') format('embedded-opentype'), url('../fonts/agents.svg#agents') format('svg'), url('../fonts/agents.woff') format('woff'), url('../fonts/agents.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+.filterList{
+	width: 25%;
+	margin-top: 13px;
+}
+.output{
+	width: 70%;
+}
+.filterList, .output{
 	display: inline-block;
 	vertical-align: top;
-	.filterManager{
-		width: 200px;
-		height: 33px;
+	overflow: hidden;
+	@media screen and (max-width: 600px) {
+		display: block;
+		width: auto;
 	}
-	.filter{
-		width: 200px;
-		height: 0;
-		text-align: center;
-		vertical-align: middle;
-		position: relative;
-		overflow: hidden;
-		margin-bottom: 0;
-
-		-webkit-transition: all .35s linear;
-		opacity: 0;
-		&.animate{
-			opacity: 1;
-			height: 50px;
-			margin-bottom: 5px;
-		}
-		p{
-			margin: 0 0 5px 0;
-			color: #fff;
-		}
+}
+.filter{
+	width: 100%;
+	height: 0;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 0;
+	-webkit-transition: all .35s linear;
+	transition: all .35s linear;
+	opacity: 0;
+	&.animate{
+		opacity: 1;
+		height: 50px;
+		margin-bottom: 5px;
+	}
+	p{
+		margin: 0 0 5px 0;
+		color: #fff;
+	}
+	&:before{
+		position: absolute;
+		top: -15px;
+		left: -10px;
+		color: #fff;
+		font-size: 50px;
+		font-family: 'agents';
+		font-style: normal;
+		speak: none;
+		font-weight: normal;
+		-webkit-font-smoothing: antialiased;
+		opacity: .25;
+	}
+	&.ie{
+		background: #1a4cbd;
 		&:before{
-			position: absolute;
-			top: -15px;
-			left: -10px;
-			color: #fff;
-			font-size: 50px;
-			font-family: 'agents';
-			font-style: normal;
-			speak: none;
-			font-weight: normal;
-			-webkit-font-smoothing: antialiased;
+			content: "\e001";
 		}
-		&.ie{
-			background: #1a4cbd;
-			&:before{
-				content: "\e001";
-			}
+	}
+	&.ff{
+		background: #dc6f26;
+		&:before{
+			content: "\e000";
 		}
-		&.ff{
-			background: #dc6f26;
-			&:before{
-				content: "\e000";
-			}
+	}
+	&.ch, &.chM{
+		background: #40ace8;
+		&:before{
+			content: "\e004";
 		}
-		&.ch, &.chM{
-			background: #40ace8;
-			&:before{
-				content: "\e004";
-			}
+	}
+	&.sf, &.sfM{
+		background: #869abb;
+		&:before{
+			content: "\e003";
 		}
-		&.sf, &.sfM{
-			background: #869abb;
-			&:before{
-				content: "\e003";
-			}
-		}
-		&.op{
-			background: #f0232a;
-			&:before{
-				content: "\e002";
-			}
+	}
+	&.op{
+		background: #f0232a;
+		&:before{
+			content: "\e002";
 		}
 	}
 }

@@ -67,8 +67,8 @@ function removeFilter () {
 				window.setTimeout(remove, 300);
 				function remove () {
 					parent.remove();
+					uaOutput();
 				}
-				uaOutput();
 			}
 		);
 	}
