@@ -7,7 +7,7 @@ document.getElementById('addFilter').addEventListener('click',
 
 		if (0 === document.getElementsByClassName(selected).length) {
 			var filter = document.createElement('div');
-			filter.innerHTML = '<p>' + selectName + ':</p><=<select name="' + selected + 'Version" class="version" id="' + selected + '"></select><input value="remove" class="removeFilter" type="button">';
+			filter.innerHTML = '<p>' + selectName + ':</p><select name="' + selected + 'Version" class="version" id="' + selected + '"></select><input value="remove" class="removeFilter" type="button">';
 			filter.className = 'filter ' + selected;
 			document.getElementById('js_filter').appendChild(filter);
 			// create a option for every version Number
@@ -16,7 +16,7 @@ document.getElementById('addFilter').addEventListener('click',
 			function createOption (i){
 				var options = document.createElement('option');
 				options.value = i;
-				options.innerHTML = i;
+				options.innerHTML = '≤ ' + i;
 				document.getElementById(selected).appendChild(options);
 			}
 			uaOutput();
