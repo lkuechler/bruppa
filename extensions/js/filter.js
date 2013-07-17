@@ -1,59 +1,33 @@
-document.getElementById('addFilter').addEventListener('click', 
+document.getElementById('addFilter').addEventListener('click',
 	function () {
-		var optionList = document.getElementById('browser');
-		var selected = optionList.options[optionList.selectedIndex].value;
-			if (selected == 'ie'){
-				selectName = 'Internet Explorer';
-				versions = '5/6/7/8/9/10';
-			}
-			else if (selected == 'ch'){
-				selectName = 'Chrome';
-				versions = '22/23/24/25/26/27';
-			}
-			else if (selected == 'chM'){
-				selectName = 'Chrome Mobile';
-				versions = '5/6/7/8/9/10';
-			}
-			else if (selected == 'ff'){
-				selectName = 'Firefox';
-				versions = '5/6/7/8/9/10';
-			}
-			else if (selected == 'sf'){
-				selectName = 'Safari';
-				versions = '5/6/7/8/9/10';
-			}
-			else if (selected == 'sfM'){
-				selectName = 'Safari Mobile';
-				versions = '5/6/7/8/9/10';
-			}
-			else if (selected == 'op'){
-				selectName = 'Opera';
-				versions = '5/6/7/8/9/10';
-			}
+		var optionList = document.getElementById('browser'),
+			selected = optionList.options[optionList.selectedIndex].value,
+			selectName = dbBrowser[selected].name,
+			versions = dbBrowser[selected].versions;
 
 		if (0 === document.getElementsByClassName(selected).length) {
-			var filter = document.createElement('div')
-			filter.innerHTML = '<p>' + selectName + ':</p><select name="' + selected + 'Version" class="version" id="js-' + selected + '"></select><input value="remove" class="removeFilter" type="button">';
+			var filter = document.createElement('div');
+			filter.innerHTML = '<p>' + selectName + ':</p><=<select name="' + selected + 'Version" class="version" id="' + selected + '"></select><input value="remove" class="removeFilter" type="button">';
 			filter.className = 'filter ' + selected;
 			document.getElementById('js_filter').appendChild(filter);
 			// create a option for every version Number
-			var newSel = 'js-' + selected;
-			versions.split('/').forEach(createOption);
+			var newSel = selected;
+			versions.forEach(createOption);
 			function createOption (i){
 				var options = document.createElement('option');
 				options.value = i;
 				options.innerHTML = i;
-				document.getElementById('js-' + selected).appendChild(options);
+				document.getElementById(selected).appendChild(options);
 			}
 			uaOutput();
-			filter.getElementsByClassName('version')[0].addEventListener('change',function(){uaOutput()}, false);
+			filter.getElementsByClassName('version')[0].addEventListener('change',function(){uaOutput();}, false);
 			removeFilter();
 			window.setTimeout(show, 0);
 			function show () {
 				document.getElementsByClassName(selected)[0].className += ' animate';
-			};
+			}
 		} 
-		else{alert('You already have a filter for ' + selectName)};
+		else{alert('You already have a filter for ' + selectName);}
 	}
 );
 
