@@ -7,7 +7,7 @@ document.getElementById('addFilter').addEventListener('click',
 
 		if (0 === document.getElementsByClassName(selected).length) {
 			var filter = document.createElement('div');
-			filter.innerHTML = '<p>' + selectName + ':</p><select name="' + selected + 'Version" class="version" id="' + selected + '"></select><input value="remove" class="removeFilter" type="button">';
+			filter.innerHTML = '<p>' + selectName + ':</p><select name="' + selected + 'Version" class="version" id="' + selected + '"></select><input value="remove" class="removeFilter" type="button"><input value="custom" class="customFilter" type="button">';
 			filter.className = 'filter ' + selected;
 			document.getElementById('js_filter').appendChild(filter);
 			// create a option for every version Number
@@ -21,7 +21,7 @@ document.getElementById('addFilter').addEventListener('click',
 			}
 			uaOutput();
 			filter.getElementsByClassName('version')[0].addEventListener('change',function(){uaOutput();}, false);
-			removeFilter();
+			initFilter();
 			window.setTimeout(show, 0);
 			function show () {
 				document.getElementsByClassName(selected)[0].className += ' animate';
@@ -32,7 +32,7 @@ document.getElementById('addFilter').addEventListener('click',
 );
 
 
-function removeFilter () {
+function initFilter () {
 	var removeFilterButton = document.getElementsByClassName('removeFilter');
 	for (var i = 0; i<removeFilterButton.length; i++) {
 		removeFilterButton[i].addEventListener('click', function() {
@@ -43,6 +43,23 @@ function removeFilter () {
 					parent.remove();
 					uaOutput();
 				}
+			}
+		);
+	};
+	var customFilterButton = document.getElementsByClassName('customFilter');
+	for (var i = 0; i<customFilterButton.length; i++) {
+		customFilterButton[i].addEventListener('click', function() {
+				var parent = this.parentNode;
+				var filter = parent.getElementsByTagName('select');
+				var filterId = filter[0].id;
+				var textarea = document.createElement('input');
+				textarea.className = 'version';
+				textarea.id = filterId;
+				var repFilter = document.getElementById(filterId);
+				parent.replaceChild(textarea, repFilter);
+				textarea.addEventListener('change', function() {
+					uaOutput();
+				})
 			}
 		);
 	}

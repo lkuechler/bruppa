@@ -13,7 +13,12 @@ function uaOutput() {
 
 function updateOutput(i) {
 	var browserName = i.id;
-	var browserVersion = i.options[i.selectedIndex].value;
+	if (i.tagName == 'SELECT') {
+		var browserVersion = i.options[i.selectedIndex].value;
+	}
+	else {
+		var browserVersion = i.value;
+	};
 	var ua = dbBrowser[browserName].userAgent + browserVersion;
 	if (output !== undefined) {
 		output += ' || ' +ua;

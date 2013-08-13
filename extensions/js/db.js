@@ -2,7 +2,7 @@ var ua = 'navigator.userAgent.match(/',
 	uaReg = 'RegExp.$1 <= ', // is the version smaller or equal
 	uaMo = '/Mobile/i.test(navigator.userAgent) && ', // testing for...
 	uaNMo = '!' + uaMo; // ...and against mobile
-	// god for testing regex's: http://leaverou.github.io/regexplained/
+	// good for testing regex's: http://leaverou.github.io/regexplained/
 var dbBrowser = {
 	ie: {
 		name: 'Internet Explorer',
