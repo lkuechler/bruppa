@@ -48,7 +48,7 @@ function initFilter () {
 	};
 	var customFilterButton = document.getElementsByClassName('customFilter');
 	for (var i = 0; i<customFilterButton.length; i++) {
-		customFilterButton[i].addEventListener('click', function() {
+		customFilterButton[i].addEventListener('click', function(i) {
 				var parent = this.parentNode;
 				var filter = parent.getElementsByTagName('select');
 				var filterId = filter[0].id;
@@ -57,6 +57,7 @@ function initFilter () {
 				textarea.id = filterId;
 				var repFilter = document.getElementById(filterId);
 				parent.replaceChild(textarea, repFilter);
+				this.remove();
 				textarea.addEventListener('change', function() {
 					uaOutput();
 				})
