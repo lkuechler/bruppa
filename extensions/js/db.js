@@ -11,12 +11,12 @@ var dbBrowser = {
 	},
 	ch: {
 		name: 'Chrome',
-		versions: [22, 23, 24, 25, 26, 27],
+		versions: [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
 		userAgent: ua + 'Chrome\\/(\\d+)./) && ' + uaNMo + uaReg
 	},
 	chM: {
 		name: 'Chrome Mobile',
-		versions: [5, 6, 7, 8, 9, 10],
+		versions: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28],
 		userAgent: ua + 'Chrome\\/(\\d+)./) && ' + uaMo + uaReg
 	},
 	ff: {

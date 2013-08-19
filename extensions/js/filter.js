@@ -48,11 +48,11 @@ function initFilter () {
 	};
 	var customFilterButton = document.getElementsByClassName('customFilter');
 	for (var i = 0; i<customFilterButton.length; i++) {
-		customFilterButton[i].addEventListener('click', initCustomFilter)
+		customFilterButton[i].addEventListener('click', createCustomFilter)
 	}
 }
 
-function initCustomFilter (i) {
+function createCustomFilter (i) {
 	var parent = this.parentNode;
 	var filterId = parent.getElementsByClassName('version')[0].id;
 	var textarea = document.createElement('input');
