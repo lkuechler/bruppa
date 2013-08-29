@@ -21,12 +21,12 @@ var dbBrowser = {
 	},
 	ff: {
 		name: 'Firefox',
-		versions: [5, 6, 7, 8, 9, 10],
+		versions: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
 		userAgent: ua + 'Firefox.(\\d+\\.\\d+)/) && ' + uaReg
 	},
 	sf: {
 		name: 'Safari',
-		versions: [5, 6, 7, 8, 9, 10],
+		versions: [3, 4, 5, 6, 7, 8, 9, 10],
 		userAgent: ua + 'Version.(\\d+.\\d+).{0,10}Safari/) && ' + uaNMo + uaReg
 	},
 	sfM: {
@@ -36,7 +36,7 @@ var dbBrowser = {
 	},
 	op: {
 		name: 'Opera',
-		versions: [5, 6, 7, 8, 9, 10],
+		versions: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
 		userAgent: ua + 'Opera.(\\d+\\.?\\d+)/) && ' + uaNMo + uaReg
 	}
 }
