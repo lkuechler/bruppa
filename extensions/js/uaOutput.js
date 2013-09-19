@@ -15,14 +15,13 @@ function updateOutput(i) {
 	var browserName = i.id;
 	if (i.tagName == 'SELECT') {
 		var browserVersion = i.options[i.selectedIndex].value;
-	}
-	else {
+	} else {
 		var browserVersion = i.value;
 	};
 	var ua = dbBrowser[browserName].userAgent + browserVersion;
 	if (output !== undefined) {
 		output += ' || ' +ua;
-	}else if (output = true) {
+	} else if (output = true) {
 		output = ua;
 	}
 }
